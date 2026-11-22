@@ -12,6 +12,7 @@ A single static page with no build step, served by GitHub Pages from the root of
 | --- | --- |
 | `index.html` | The whole site: content, styles, search metadata (JSON-LD), and the Fig. 1 network animation |
 | `404.html` | Page shown for broken links |
+| `Mehdizadeh_CV.pdf` | CV linked from the page |
 | `robots.txt`, `sitemap.xml` | Tell search engines what to crawl |
 | `assets/og-image.png` | Preview image shown when the link is shared |
 | `assets/favicon.svg`, `favicon.ico`, `assets/apple-touch-icon.png` | Browser and phone icons |
@@ -21,6 +22,6 @@ A single static page with no build step, served by GitHub Pages from the root of
 ## Common edits
 
 - **New paper or talk:** copy an existing `<li>` in the Publications or Talks section of `index.html` and edit it. If it is a paper, also add a `ScholarlyArticle` entry to the JSON-LD block in the `<head>`.
-- **Add a CV:** put `cv.pdf` in the repository root and add `<li><a href="/cv.pdf">CV</a></li>` to the list of links under the name.
+- **Update the CV:** replace `Mehdizadeh_CV.pdf` with a new PDF of the same name. Its LaTeX source is `CV_Mehdizadeh_Website.tex` in the CV_Letter folder; this public copy leaves out the phone number.
 - **Add a photo:** put a square `photo.jpg` in `assets/`, then add `"image": "https://aliakbarmehdizadeh.github.io/assets/photo.jpg"` to the `Person` entry in the JSON-LD block.
 - **After any edit:** update the date in `sitemap.xml` (`<lastmod>`), in the JSON-LD (`dateModified`), and in the footer.
