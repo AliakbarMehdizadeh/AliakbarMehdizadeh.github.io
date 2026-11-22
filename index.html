@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aliakbar (Ali) Mehdizadeh | Computational Social Scientist</title>
+<meta name="description" content="Aliakbar (Ali) Mehdizadeh is a computational social scientist (Ph.D., UC Davis) studying how LLM agents form networks, change opinions, and agree on conventions.">
+<meta name="author" content="Aliakbar Mehdizadeh">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<link rel="canonical" href="https://aliakbarmehdizadeh.github.io/">
+<meta name="color-scheme" content="light dark">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0f151d" media="(prefers-color-scheme: dark)">
+
+<meta property="og:type" content="profile">
+<meta property="og:site_name" content="Aliakbar Mehdizadeh">
+<meta property="og:title" content="Aliakbar (Ali) Mehdizadeh, computational social scientist">
+<meta property="og:description" content="Research on how AI agents form networks, give in to peer pressure, settle on conventions, and reshape the knowledge people rely on.">
+<meta property="og:url" content="https://aliakbarmehdizadeh.github.io/">
+<meta property="og:image" content="https://aliakbarmehdizadeh.github.io/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Aliakbar Mehdizadeh, computational social scientist, beside a network of AI agents colored by group">
+<meta property="og:locale" content="en_US">
+<meta property="profile:first_name" content="Aliakbar">
+<meta property="profile:last_name" content="Mehdizadeh">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Aliakbar (Ali) Mehdizadeh, computational social scientist">
+<meta name="twitter:description" content="Research on how AI agents form networks, give in to peer pressure, settle on conventions, and reshape the knowledge people rely on.">
+<meta name="twitter:image" content="https://aliakbarmehdizadeh.github.io/assets/og-image.png">
+
+<link rel="icon" href="/favicon.ico" sizes="48x48">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="preload" href="/assets/fonts/newsreader-latin-opsz-normal.woff2" as="font" type="font/woff2" crossorigin>
+
+<style>
+@font-face {
+  font-family: "Newsreader";
+  src: url("/assets/fonts/newsreader-latin-opsz-normal.woff2") format("woff2-variations"),
+       url("/assets/fonts/newsreader-latin-opsz-normal.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Newsreader";
+  src: url("/assets/fonts/newsreader-latin-opsz-italic.woff2") format("woff2-variations"),
+       url("/assets/fonts/newsreader-latin-opsz-italic.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: italic;
+  font-display: swap;
+}
+
+:root {
+  --paper: #ffffff;
+  --ink: #18212e;
+  --muted: #586273;
+  --rule: #e3e7ed;
+  --plate: #f3f6f9;
+  --link: #0072b2;
+  --link-hover: #00527f;
+  --label: 9.5rem;
+  --measure: 38rem;
+  --gap: clamp(1.5rem, 3vw, 3rem);
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #0f151d;
+    --ink: #e7ecf2;
+    --muted: #9ba6b4;
+    --rule: #222c39;
+    --plate: #151d28;
+    --link: #56b4e9;
+    --link-hover: #93d0f3;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Newsreader", Charter, "Bitstream Charter", "Sitka Text", Cambria, Georgia, serif;
+  font-size: 1.0625rem;
+  line-height: 1.62;
+  font-optical-sizing: auto;
+  font-kerning: normal;
+  text-rendering: optimizeLegibility;
+}
+@media (min-width: 48rem) { body { font-size: 1.125rem; } }
+
+a {
+  color: var(--link);
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+a:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
+:focus-visible { outline: 2px solid var(--link); outline-offset: 3px; border-radius: 2px; }
+
+cite { font-style: italic; }
+
+.skip {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  background: var(--paper);
+  padding: 0.5rem 0.75rem;
+  z-index: 10;
+}
+.skip:focus { top: 1rem; }
+
+.wrap {
+  max-width: 70rem;
+  margin: 0 auto;
+  padding-inline: clamp(1.25rem, 5vw, 3rem);
+}
+
+/* Section navigation */
+.site-nav { padding-block: 1.25rem 0; }
+.site-nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.5rem;
+  font-size: 0.9375rem;
+}
+.site-nav a { color: var(--muted); text-decoration: none; }
+.site-nav a:hover { color: var(--ink); text-decoration: underline; }
+
+/* Hero: name and statement beside the live figure */
+.hero {
+  display: grid;
+  gap: 2.5rem;
+  padding-block: clamp(2.25rem, 7vw, 5.5rem) clamp(2.5rem, 6vw, 4.5rem);
+}
+@media (min-width: 62rem) {
+  .hero {
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+    align-items: center;
+    column-gap: 4.5rem;
+  }
+}
+.hero h1 {
+  font-size: clamp(2.875rem, 1.75rem + 4.6vw, 5.5rem);
+  line-height: 0.95;
+  font-weight: 430;
+  letter-spacing: -0.024em;
+  margin: 0 0 1.25rem;
+}
+.hero h1 span { display: block; }
+.hero .role { color: var(--muted); margin: 0 0 1.75rem; }
+.hero .lede {
+  font-size: clamp(1.25rem, 1.08rem + 0.55vw, 1.4375rem);
+  line-height: 1.45;
+  max-width: 31rem;
+  margin: 0 0 1.75rem;
+}
+.profiles {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.375rem 1.5rem;
+}
+
+/* Fig. 1 */
+.fig { margin: 0; }
+.plate {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  background: var(--plate);
+  border-radius: 6px;
+  overflow: hidden;
+}
+.plate canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem 1.25rem;
+  margin-top: 0.875rem;
+  font-size: 0.9375rem;
+}
+.seg {
+  display: inline-flex;
+  padding: 2px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+}
+.seg button {
+  font: inherit;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  border-radius: 999px;
+  padding: 0.3rem 0.85rem;
+  cursor: pointer;
+}
+.seg button:hover { color: var(--ink); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+.replay {
+  font: inherit;
+  color: var(--link);
+  background: none;
+  border: 0;
+  padding: 0.3rem 0;
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+}
+.replay:hover { color: var(--link-hover); text-decoration-thickness: 2px; }
+.stat { color: var(--muted); font-variant-numeric: tabular-nums; }
+.fig figcaption {
+  margin-top: 0.75rem;
+  max-width: 36rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+  line-height: 1.5;
+}
+.fig figcaption b { color: var(--ink); font-weight: 600; }
+
+/* Content sections: label column and text column, like a CV */
+.block {
+  border-top: 1px solid var(--rule);
+  padding-block: clamp(2.25rem, 5vw, 3.5rem);
+}
+@media (min-width: 52rem) {
+  .block {
+    display: grid;
+    grid-template-columns: var(--label) minmax(0, var(--measure));
+    column-gap: var(--gap);
+  }
+}
+.block > h2 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  line-height: 1.62;
+  margin: 0 0 1rem;
+}
+@media (min-width: 52rem) { .block > h2 { margin: 0; } }
+
+.text p { margin: 0 0 1em; }
+.text > :last-child { margin-bottom: 0; }
+.text h3 {
+  font-size: 1.1875rem;
+  font-weight: 600;
+  line-height: 1.35;
+  margin: 2.25rem 0 0.5rem;
+}
+.text > h3:first-child { margin-top: 0; }
+.text .ref { color: var(--muted); font-size: 0.9375rem; }
+
+/* Dated lists: publications, talks, teaching, background */
+.entries { list-style: none; margin: 0; padding: 0; }
+.entries > li {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr);
+  column-gap: 1rem;
+  padding-block: 0.5rem;
+}
+.entries .when {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+  padding-top: 0.1rem;
+}
+.entries .what p { margin: 0; }
+.entries .title { font-weight: 560; }
+.entries .meta { color: var(--muted); font-size: 0.9375rem; }
+.entries .links { font-size: 0.9375rem; }
+.entries .links a { margin-right: 1rem; }
+.me { color: var(--ink); font-weight: 500; }
+@media (max-width: 30rem) {
+  .entries > li { grid-template-columns: minmax(0, 1fr); }
+  .entries .when { padding-top: 0; }
+}
+
+.site-footer p {
+  margin: 0;
+  border-top: 1px solid var(--rule);
+  padding-block: 2rem 3rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+@media print {
+  .site-nav, .controls, .skip { display: none; }
+  .block { break-inside: avoid; }
+  a { color: inherit; }
+}
+</style>
+<noscript><style>.fig { display: none; }</style></noscript>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://aliakbarmehdizadeh.github.io/#website",
+      "url": "https://aliakbarmehdizadeh.github.io/",
+      "name": "Aliakbar Mehdizadeh",
+      "alternateName": ["Ali Mehdizadeh"],
+      "inLanguage": "en"
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://aliakbarmehdizadeh.github.io/#profilepage",
+      "url": "https://aliakbarmehdizadeh.github.io/",
+      "name": "Aliakbar (Ali) Mehdizadeh | Computational Social Scientist",
+      "isPartOf": { "@id": "https://aliakbarmehdizadeh.github.io/#website" },
+      "mainEntity": { "@id": "https://aliakbarmehdizadeh.github.io/#person" },
+      "dateModified": "2026-11-20",
+      "inLanguage": "en"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://aliakbarmehdizadeh.github.io/#person",
+      "name": "Aliakbar Mehdizadeh",
+      "alternateName": ["Ali Mehdizadeh", "A. Mehdizadeh"],
+      "givenName": "Aliakbar",
+      "familyName": "Mehdizadeh",
+      "url": "https://aliakbarmehdizadeh.github.io/",
+      "email": "mailto:amehdizadeh@ucdavis.edu",
+      "jobTitle": "Computational Social Scientist",
+      "description": "Computational social scientist (Ph.D., University of California, Davis) who studies multi-agent AI systems, network science, and human-AI coupling.",
+      "alumniOf": [
+        { "@type": "CollegeOrUniversity", "name": "University of California, Davis", "sameAs": "https://en.wikipedia.org/wiki/University_of_California,_Davis" },
+        { "@type": "CollegeOrUniversity", "name": "Simon Fraser University", "sameAs": "https://en.wikipedia.org/wiki/Simon_Fraser_University" },
+        { "@type": "CollegeOrUniversity", "name": "Sharif University of Technology", "sameAs": "https://en.wikipedia.org/wiki/Sharif_University_of_Technology" }
+      ],
+      "knowsAbout": [
+        "Computational social science",
+        "Multi-agent systems",
+        "Large language models",
+        "Network science",
+        "Complex systems",
+        "Opinion dynamics",
+        "Convention formation",
+        "Human-AI interaction",
+        "Statistical physics"
+      ],
+      "sameAs": [
+        "https://scholar.google.com/citations?user=Cer-MZUAAAAJ",
+        "https://github.com/AliakbarMehdizadeh",
+        "https://www.linkedin.com/in/ali-mehdizadeh-b3967278"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Homophily-induced emergence of biased structures in LLM-based multi-agent AI systems",
+      "author": [{ "@id": "https://aliakbarmehdizadeh.github.io/#person" }, { "@type": "Person", "name": "Martin Hilbert" }],
+      "datePublished": "2025-11-12",
+      "isPartOf": { "@type": "Periodical", "name": "Social Network Analysis and Mining" },
+      "url": "https://doi.org/10.1007/s13278-025-01535-7",
+      "sameAs": "https://arxiv.org/abs/2510.02637"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Optimal control of rotary motors",
+      "author": [{ "@type": "Person", "name": "Joseph N. E. Lucero" }, { "@id": "https://aliakbarmehdizadeh.github.io/#person" }, { "@type": "Person", "name": "David A. Sivak" }],
+      "datePublished": "2019-01",
+      "isPartOf": { "@type": "Periodical", "name": "Physical Review E" },
+      "url": "https://doi.org/10.1103/PhysRevE.99.012119",
+      "sameAs": "https://arxiv.org/abs/1807.10872"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Exploring the Topology and Memory of Consensus: How LLM Agents Agree, Fragment, or Settle When Forming Conventions",
+      "author": [{ "@id": "https://aliakbarmehdizadeh.github.io/#person" }, { "@type": "Person", "name": "Martin Hilbert" }],
+      "datePublished": "2026-06-02",
+      "url": "https://arxiv.org/abs/2606.04197"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "Epistemic Substitution: How Grokipedia's AI-Generated Encyclopedia Restructures Authority",
+      "author": [{ "@id": "https://aliakbarmehdizadeh.github.io/#person" }, { "@type": "Person", "name": "Martin Hilbert" }],
+      "datePublished": "2025-12-03",
+      "url": "https://arxiv.org/abs/2512.03337"
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "name": "When Your AI Agent Succumbs to Peer-Pressure: Studying Opinion-Change Dynamics of LLMs",
+      "author": [{ "@id": "https://aliakbarmehdizadeh.github.io/#person" }, { "@type": "Person", "name": "Martin Hilbert" }],
+      "datePublished": "2025-10-21",
+      "url": "https://arxiv.org/abs/2510.19107"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="wrap site-nav">
+  <nav aria-label="Sections">
+    <ul>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#publications">Publications</a></li>
+      <li><a href="#talks">Talks</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#background">Background</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main id="main" class="wrap">
+
+  <section class="hero" aria-labelledby="name">
+    <div>
+      <h1 id="name"><span>Aliakbar</span> <span>Mehdizadeh</span></h1>
+      <p class="role">Computational social scientist with a Ph.D. from UC Davis.</p>
+      <p class="lede">I study AI agents as social actors: who they connect with, when they give in to peer pressure, how they settle on shared conventions, and how they reshape the knowledge people rely on.</p>
+      <ul class="profiles">
+        <li><a href="mailto:amehdizadeh@ucdavis.edu">Email</a></li>
+        <li><a href="https://scholar.google.com/citations?user=Cer-MZUAAAAJ&amp;hl=en" rel="me">Google Scholar</a></li>
+        <li><a href="https://github.com/AliakbarMehdizadeh" rel="me">GitHub</a></li>
+        <li><a href="https://www.linkedin.com/in/ali-mehdizadeh-b3967278" rel="me">LinkedIn</a></li>
+      </ul>
+    </div>
+
+    <figure class="fig" aria-labelledby="fig-caption">
+      <div class="plate">
+        <canvas id="net" role="img" aria-label="Animated network of AI agents. Each agent links to two others; color marks a social attribute."></canvas>
+      </div>
+      <div class="controls">
+        <div class="seg" role="group" aria-label="What agents can see">
+          <button type="button" data-mode="structure" aria-pressed="false">Structure only</button>
+          <button type="button" data-mode="attributes" aria-pressed="true">With attributes</button>
+        </div>
+        <button type="button" class="replay" id="net-replay">Replay</button>
+        <span class="stat" id="net-stat">Same-color links: 0%</span>
+      </div>
+      <figcaption id="fig-caption"><b>Fig. 1.</b> Agents join one at a time and each links to two others; color marks a social attribute. Agents that see only the network favor well-connected agents, so hubs form. Agents that also see attributes favor others like themselves, so the network sorts by color. A toy version of <a href="https://doi.org/10.1007/s13278-025-01535-7">Mehdizadeh and Hilbert (2025)</a>.</figcaption>
+    </figure>
+  </section>
+
+  <section class="block" id="about" aria-labelledby="about-h">
+    <h2 id="about-h">About</h2>
+    <div class="text">
+      <p>Aliakbar (Ali) Mehdizadeh is a computational social scientist who studies multi-agent AI systems as social systems. He completed his Ph.D. in Communication (Computational Social Science) at the University of California, Davis, in 2026, advised by Martin Hilbert. His dissertation develops the framework of multi-agent generative networks, in which large language model agents form ties, influence one another, and curate knowledge. His methods combine LLM-agent experiments, network science, and dynamical systems.</p>
+      <p>He trained first in physics, at Sharif University of Technology and at Simon Fraser University, where he worked on the optimal control of molecular motors, and then in philosophy of science at Sharif. He also spent several years in Tehran’s technology sector, where he led people analytics at Cafe Bazaar and Hezardastan Group as the organization grew from about 100 to 1,000 employees, and worked as a product owner and data scientist.</p>
+    </div>
+  </section>
+
+  <section class="block" id="research" aria-labelledby="research-h">
+    <h2 id="research-h">Research</h2>
+    <div class="text">
+      <h3>How AI agents build networks</h3>
+      <p>Asked to grow a network one link at a time, LLM agents reproduce preferential attachment: they link to agents that already have many connections. Give them social attributes such as age, gender, religion, or political orientation, and they also link to agents like themselves. The networks that result sort into homophilic communities, with uneven ties between groups that mirror familiar social hierarchies.</p>
+      <p class="ref">With Martin Hilbert, <a href="https://doi.org/10.1007/s13278-025-01535-7"><cite>Social Network Analysis and Mining</cite>, 2025</a></p>
+
+      <h3>Peer pressure and opinion change</h3>
+      <p>When LLM agents sit in a social network and see their neighbors’ views, their opinions shift along an S-shaped curve: steady under light pressure, flipping sharply past a threshold, then leveling off. The threshold depends on the model. Gemini 1.5 Flash holds out until more than 70% of its peers disagree, while ChatGPT-4o-mini moves with a dissenting minority. Persuasion is also asymmetric: moving an opinion from yes to no takes a different push than moving it back.</p>
+      <p class="ref">With Martin Hilbert, <a href="https://arxiv.org/abs/2510.19107">arXiv:2510.19107</a>, 2025</p>
+
+      <h3>Memory, topology, and shared conventions</h3>
+      <p>In a networked Naming Game, how much an agent remembers and how agents are wired together interact. Longer memory slows agreement in decentralized networks and speeds it up in centralized ones, but there fast settling often means locking into rival conventions instead of a shared one. Agents’ choices are well described by Fictitious Play, a belief-based learning rule, rather than by reward-based learning. The lesson for system design is to choose memory depth and network topology together, not one at a time.</p>
+      <p class="ref">With Martin Hilbert, <a href="https://arxiv.org/abs/2606.04197">arXiv:2606.04197</a>, 2026</p>
+
+      <h3>AI-generated knowledge and authority</h3>
+      <p>Comparing matched articles in Grokipedia and Wikipedia, we find that the AI-generated encyclopedia replaces much of Wikipedia’s reliance on peer-reviewed academic work with user-generated and civic-organization sources. We call this shift epistemic substitution: the AI system changes who counts as an authority.</p>
+      <p class="ref">With Martin Hilbert, <a href="https://arxiv.org/abs/2512.03337">arXiv:2512.03337</a>, 2025</p>
+
+      <h3>Human-AI coupling across timescales</h3>
+      <p>AI systems act in seconds, while the people and institutions that check and repair them work over hours to years. We model coupled human-AI systems as slow-fast interdependent networks to ask when that gap in timescales makes the whole system fragile, producing tipping points, hysteresis, and the risk of collapse.</p>
+      <p class="ref">Working paper with Martin Hilbert, Raissa D’Souza, and James Crutchfield</p>
+    </div>
+  </section>
+
+  <section class="block" id="publications" aria-labelledby="publications-h">
+    <h2 id="publications-h">Publications</h2>
+    <div class="text">
+      <h3>Journal articles and chapters</h3>
+      <ol class="entries">
+        <li>
+          <span class="when">In press</span>
+          <div class="what">
+            <p class="title">Generative AI in social media</p>
+            <p class="meta"><span class="me">Aliakbar Mehdizadeh</span>. In <cite>Encyclopedia of Social Network Analysis and Mining</cite>, 3rd ed. Springer.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2025</span>
+          <div class="what">
+            <p class="title">Homophily-induced emergence of biased structures in LLM-based multi-agent AI systems</p>
+            <p class="meta"><span class="me">Aliakbar Mehdizadeh</span> and Martin Hilbert. <cite>Social Network Analysis and Mining</cite> 15, 108.</p>
+            <p class="links"><a href="https://doi.org/10.1007/s13278-025-01535-7">Article</a> <a href="https://arxiv.org/abs/2510.02637">arXiv</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2019</span>
+          <div class="what">
+            <p class="title">Optimal control of rotary motors</p>
+            <p class="meta">Joseph N. E. Lucero, <span class="me">Aliakbar Mehdizadeh</span>, and David A. Sivak. <cite>Physical Review E</cite> 99, 012119.</p>
+            <p class="links"><a href="https://doi.org/10.1103/PhysRevE.99.012119">Article</a> <a href="https://arxiv.org/abs/1807.10872">arXiv</a></p>
+          </div>
+        </li>
+      </ol>
+
+      <h3>Preprints</h3>
+      <ol class="entries">
+        <li>
+          <span class="when">2026</span>
+          <div class="what">
+            <p class="title">Exploring the topology and memory of consensus: How LLM agents agree, fragment, or settle when forming conventions</p>
+            <p class="meta"><span class="me">Aliakbar Mehdizadeh</span> and Martin Hilbert. Revise and resubmit, <cite>Journal of Artificial Societies and Social Simulation</cite>.</p>
+            <p class="links"><a href="https://arxiv.org/abs/2606.04197">arXiv:2606.04197</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2025</span>
+          <div class="what">
+            <p class="title">Epistemic substitution: How Grokipedia’s AI-generated encyclopedia restructures authority</p>
+            <p class="meta"><span class="me">Aliakbar Mehdizadeh</span> and Martin Hilbert.</p>
+            <p class="links"><a href="https://arxiv.org/abs/2512.03337">arXiv:2512.03337</a></p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2025</span>
+          <div class="what">
+            <p class="title">When your AI agent succumbs to peer-pressure: Studying opinion-change dynamics of LLMs</p>
+            <p class="meta"><span class="me">Aliakbar Mehdizadeh</span> and Martin Hilbert.</p>
+            <p class="links"><a href="https://arxiv.org/abs/2510.19107">arXiv:2510.19107</a></p>
+          </div>
+        </li>
+      </ol>
+
+      <h3>Working papers</h3>
+      <ol class="entries">
+        <li>
+          <span class="when">2026</span>
+          <div class="what">
+            <p class="title">When the AI singularity hits a wall: Timescale separation and the collapse risk of human-AI coupling</p>
+            <p class="meta"><span class="me">Aliakbar Mehdizadeh</span>, Martin Hilbert, Raissa M. D’Souza, and James P. Crutchfield.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3>Theses</h3>
+      <ol class="entries">
+        <li>
+          <span class="when">2016</span>
+          <div class="what">
+            <p class="title">Optimal nonequilibrium driving of a rotary mechanochemical motor</p>
+            <p class="meta">M.Sc. thesis, Simon Fraser University.</p>
+            <p class="links"><a href="https://summit.sfu.ca/_flysystem/fedora/sfu_migrate/16902/etd9935_AMehdizadeh.pdf">PDF</a></p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="talks" aria-labelledby="talks-h">
+    <h2 id="talks-h">Talks</h2>
+    <div class="text">
+      <ol class="entries">
+        <li>
+          <span class="when">Jun 2026</span>
+          <div class="what">
+            <p class="title">Epistemic substitution: How Grokipedia’s AI-generated encyclopedia restructures authority</p>
+            <p class="meta">NetSci 2026, Boston</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">Dec 2025</span>
+          <div class="what">
+            <p class="title">Bias amplification and emergent social dynamics in multi-agent LLM systems</p>
+            <p class="meta">Complex Networks 2025, New York</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">Dec 2025</span>
+          <div class="what">
+            <p class="title">Peer pressure, opinion change, and cognitive dynamics in LLM-based multi-agent systems</p>
+            <p class="meta">Complex Networks 2025, New York</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">Dec 2016</span>
+          <div class="what">
+            <p class="title">Optimal control in stochastic non-equilibrium molecular motors</p>
+            <p class="meta">Frontiers in Biophysics, Vancouver</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="teaching" aria-labelledby="teaching-h">
+    <h2 id="teaching-h">Teaching</h2>
+    <div class="text">
+      <ol class="entries">
+        <li>
+          <span class="when">2022–2026</span>
+          <div class="what">
+            <p class="title">Teaching assistant, University of California, Davis</p>
+            <p class="meta">Computational Social Science; Digital Technology and Social Change; Social Science with Online Data; Introduction to Communication</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2017–2020</span>
+          <div class="what">
+            <p class="title">Teaching assistant, Sharif University of Technology</p>
+            <p class="meta">Statistical Physics; Philosophy of Mind; Business Ethics; Moral Philosophy</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="background" aria-labelledby="background-h">
+    <h2 id="background-h">Background</h2>
+    <div class="text">
+      <h3>Education</h3>
+      <ol class="entries">
+        <li>
+          <span class="when">2026</span>
+          <div class="what">
+            <p class="title">Ph.D., Communication (Computational Social Science)</p>
+            <p class="meta">University of California, Davis. Advisor: Martin Hilbert.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2024</span>
+          <div class="what">
+            <p class="title">M.A., Communication</p>
+            <p class="meta">University of California, Davis. Thesis: <cite>Information Diffusion and Complexity in Networked Multi-Agent Systems</cite>.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2020</span>
+          <div class="what">
+            <p class="title">M.Sc., Philosophy of Science</p>
+            <p class="meta">Sharif University of Technology. Thesis: <cite>Kantian Capitalism: A Critical View of the Feasibility of Moral Capitalism</cite>.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2016</span>
+          <div class="what">
+            <p class="title">M.Sc., Physics (Statistical Physics)</p>
+            <p class="meta">Simon Fraser University. Supervisor: David Sivak.</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2014</span>
+          <div class="what">
+            <p class="title">B.Sc., Physics</p>
+            <p class="meta">Sharif University of Technology.</p>
+          </div>
+        </li>
+      </ol>
+
+      <h3>Industry</h3>
+      <ol class="entries">
+        <li>
+          <span class="when">2020–2023</span>
+          <div class="what">
+            <p class="title">Product owner and data scientist</p>
+            <p class="meta">Startup Factory, Hezardastan Group, Tehran</p>
+          </div>
+        </li>
+        <li>
+          <span class="when">2019–2021</span>
+          <div class="what">
+            <p class="title">Head of people analytics and applied ethics</p>
+            <p class="meta">Cafe Bazaar, Hezardastan Group, Tehran</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="block" id="contact" aria-labelledby="contact-h">
+    <h2 id="contact-h">Contact</h2>
+    <div class="text">
+      <p>Email is the best way to reach me: <a href="mailto:amehdizadeh@ucdavis.edu">amehdizadeh@ucdavis.edu</a>. Papers and citations are on <a href="https://scholar.google.com/citations?user=Cer-MZUAAAAJ&amp;hl=en" rel="me">Google Scholar</a>, code is on <a href="https://github.com/AliakbarMehdizadeh" rel="me">GitHub</a>, and my career history is on <a href="https://www.linkedin.com/in/ali-mehdizadeh-b3967278" rel="me">LinkedIn</a>.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="wrap site-footer">
+  <p>© 2026 Aliakbar Mehdizadeh. Updated November 2026.</p>
+</footer>
+
+<script>
+(function () {
+  "use strict";
+  var canvas = document.getElementById("net");
+  if (!canvas || !canvas.getContext) return;
+  var ctx = canvas.getContext("2d");
+  var plate = canvas.parentNode;
+  var statEl = document.getElementById("net-stat");
+  var modeButtons = document.querySelectorAll("[data-mode]");
+  var replayBtn = document.getElementById("net-replay");
+  var reduceMQ = window.matchMedia("(prefers-reduced-motion: reduce)");
+  var darkMQ = window.matchMedia("(prefers-color-scheme: dark)");
+
+  var GROUPS = 3, LINKS = 2, HOMOPHILY = 12, STEP_MS = 85;
+  var W = 0, H = 0, DPR = 1, SCALE = 1;
+  var s = { mode: "attributes", nodes: [], edges: [], target: 0, nextAt: 0, alpha: 1, raf: 0, onscreen: false, done: false };
+  var view = { z: 1, cx: 0, cy: 0, ready: false };
+
+  // Camera that keeps the growing network framed inside the plate.
+  function frameView(snap) {
+    var n = s.nodes, i;
+    if (!n.length) { view.ready = false; return; }
+    var x0 = Infinity, x1 = -Infinity, y0 = Infinity, y1 = -Infinity;
+    for (i = 0; i < n.length; i++) {
+      if (n[i].x < x0) x0 = n[i].x; if (n[i].x > x1) x1 = n[i].x;
+      if (n[i].y < y0) y0 = n[i].y; if (n[i].y > y1) y1 = n[i].y;
+    }
+    var m = 24 * Math.max(0.85, SCALE);
+    var bw = Math.max(x1 - x0, 60 * SCALE), bh = Math.max(y1 - y0, 45 * SCALE);
+    var z = Math.max(0.5, Math.min(1.8, (W - 2 * m) / bw, (H - 2 * m) / bh));
+    var cx = (x0 + x1) / 2, cy = (y0 + y1) / 2;
+    if (snap || !view.ready) { view.z = z; view.cx = cx; view.cy = cy; view.ready = true; return; }
+    view.z += (z - view.z) * 0.06;
+    view.cx += (cx - view.cx) * 0.08;
+    view.cy += (cy - view.cy) * 0.08;
+  }
+  function px(x) { return W / 2 + (x - view.cx) * view.z; }
+  function py(y) { return H / 2 + (y - view.cy) * view.z; }
+
+  function palette() {
+    var dark = darkMQ.matches;
+    return {
+      groups: dark ? ["#E69F00", "#56B4E9", "#009E73"] : ["#E69F00", "#0072B2", "#009E73"],
+      edge: dark ? "rgba(231,236,242,0.30)" : "rgba(24,33,46,0.26)",
+      halo: dark ? "#151d28" : "#f3f6f9"
+    };
+  }
+
+  // Sizes the canvas to its plate. Returns true only when the size changed,
+  // because resizing a canvas clears it.
+  function measure() {
+    var r = plate.getBoundingClientRect();
+    var w = Math.max(160, r.width), h = Math.max(120, r.height);
+    var dpr = Math.min(window.devicePixelRatio || 1, 2);
+    if (w === W && h === H && dpr === DPR) return false;
+    if (W && H) {
+      for (var i = 0; i < s.nodes.length; i++) { s.nodes[i].x *= w / W; s.nodes[i].y *= h / H; }
+    }
+    W = w; H = h; DPR = dpr;
+    SCALE = Math.sqrt(W * H) / 420;
+    canvas.width = Math.round(W * DPR);
+    canvas.height = Math.round(H * DPR);
+    ctx.setTransform(DPR, 0, 0, DPR, 0, 0);
+    return true;
+  }
+
+  function pick(g, taken) {
+    var n = s.nodes, total = 0, w = [], i, r;
+    for (i = 0; i < n.length; i++) {
+      var wt = taken.indexOf(i) === -1 ? n[i].deg + 1 : 0;
+      if (wt && s.mode === "attributes" && n[i].g === g) wt *= HOMOPHILY;
+      w.push(wt); total += wt;
+    }
+    r = Math.random() * total;
+    for (i = 0; i < w.length; i++) { r -= w[i]; if (r <= 0 && w[i] > 0) return i; }
+    for (i = w.length - 1; i >= 0; i--) if (w[i] > 0) return i;
+    return -1;
+  }
+
+  function addNode(now) {
+    var n = s.nodes, i = n.length, g = Math.floor(Math.random() * GROUPS), taken = [], k, t;
+    for (k = 0; k < Math.min(LINKS, i); k++) { t = pick(g, taken); if (t >= 0) taken.push(t); }
+    var node = { x: W / 2, y: H / 2, vx: 0, vy: 0, g: g, deg: 0, born: now };
+    if (taken.length) {
+      var a = Math.random() * Math.PI * 2, base = n[taken[0]];
+      node.x = base.x + Math.cos(a) * 12 * SCALE;
+      node.y = base.y + Math.sin(a) * 12 * SCALE;
+    }
+    n.push(node);
+    for (k = 0; k < taken.length; k++) { s.edges.push([i, taken[k]]); node.deg++; n[taken[k]].deg++; }
+  }
+
+  function tick() {
+    var n = s.nodes, e = s.edges, len = n.length, a = s.alpha, i, j;
+    var charge = -30 * SCALE, reach = Math.pow(170 * SCALE, 2), dist = 19 * SCALE;
+    for (i = 0; i < len; i++) {
+      var p = n[i];
+      for (j = i + 1; j < len; j++) {
+        var q = n[j], dx = q.x - p.x, dy = q.y - p.y, l2 = dx * dx + dy * dy;
+        if (l2 > reach) continue;
+        if (l2 < 1) { dx = Math.random() - 0.5; dy = Math.random() - 0.5; l2 = 1; }
+        var f = charge * a / l2;
+        p.vx += dx * f; p.vy += dy * f;
+        q.vx -= dx * f; q.vy -= dy * f;
+      }
+    }
+    for (i = 0; i < e.length; i++) {
+      var u = n[e[i][0]], v = n[e[i][1]];
+      var x = v.x + v.vx - u.x - u.vx, y = v.y + v.vy - u.y - u.vy;
+      var l = Math.sqrt(x * x + y * y) || 1e-6;
+      l = (l - dist) / l * a / Math.min(u.deg, v.deg);
+      x *= l; y *= l;
+      var b = u.deg / (u.deg + v.deg);
+      v.vx -= x * b; v.vy -= y * b;
+      u.vx += x * (1 - b); u.vy += y * (1 - b);
+    }
+    var cx = W / 2, cy = H / 2, pad = 9 * SCALE;
+    for (i = 0; i < len; i++) {
+      var o = n[i];
+      o.vx += (cx - o.x) * 0.05 * a;
+      o.vy += (cy - o.y) * 0.07 * a;
+      o.vx *= 0.6; o.vy *= 0.6;
+      o.x += o.vx; o.y += o.vy;
+      if (o.x < pad) o.x = pad; else if (o.x > W - pad) o.x = W - pad;
+      if (o.y < pad) o.y = pad; else if (o.y > H - pad) o.y = H - pad;
+    }
+  }
+
+  function draw(now) {
+    var c = palette(), n = s.nodes, e = s.edges, i;
+    ctx.clearRect(0, 0, W, H);
+    ctx.lineWidth = 1;
+    ctx.strokeStyle = c.edge;
+    ctx.beginPath();
+    for (i = 0; i < e.length; i++) {
+      ctx.moveTo(px(n[e[i][0]].x), py(n[e[i][0]].y));
+      ctx.lineTo(px(n[e[i][1]].x), py(n[e[i][1]].y));
+    }
+    ctx.stroke();
+    ctx.lineWidth = 1.5;
+    ctx.strokeStyle = c.halo;
+    var unit = Math.max(0.85, SCALE);
+    for (i = 0; i < n.length; i++) {
+      var age = Math.min(1, (now - n[i].born) / 280), grow = 1 - Math.pow(1 - age, 3);
+      var r = (2.3 + 1.15 * Math.sqrt(n[i].deg)) * unit * grow;
+      if (r <= 0) continue;
+      ctx.beginPath();
+      ctx.arc(px(n[i].x), py(n[i].y), r, 0, Math.PI * 2);
+      ctx.fillStyle = c.groups[n[i].g];
+      ctx.fill();
+      ctx.stroke();
+    }
+  }
+
+  function sameShare() {
+    var same = 0, e = s.edges;
+    for (var i = 0; i < e.length; i++) if (s.nodes[e[i][0]].g === s.nodes[e[i][1]].g) same++;
+    return e.length ? Math.round(100 * same / e.length) : 0;
+  }
+
+  function showStat() { statEl.textContent = "Same-color links: " + sameShare() + "%"; }
+
+  function finish() {
+    s.done = true;
+    canvas.setAttribute("aria-label", "Network of " + s.nodes.length + " AI agents. " + sameShare() +
+      "% of links connect agents of the same color (" + (s.mode === "attributes" ? "agents see attributes" : "agents see structure only") + ").");
+  }
+
+  function frame(now) {
+    s.raf = 0;
+    if (!s.onscreen || document.hidden) return;
+    var growing = s.nodes.length < s.target;
+    if (growing && now >= s.nextAt) {
+      addNode(now);
+      s.nextAt = now + STEP_MS;
+      showStat();
+    }
+    s.alpha += ((growing ? 0.3 : 0) - s.alpha) * 0.0228;
+    tick();
+    frameView(false);
+    draw(now);
+    if (growing || s.alpha > 0.004) s.raf = requestAnimationFrame(frame);
+    else finish();
+  }
+
+  function schedule() { if (!s.raf && !s.done && s.onscreen && !document.hidden) s.raf = requestAnimationFrame(frame); }
+
+  function instant() {
+    var k, t;
+    for (k = 0; k < s.target; k++) {
+      addNode(-1e9);
+      for (t = 0; t < 4; t++) { s.alpha += (0.3 - s.alpha) * 0.0228; tick(); }
+    }
+    for (t = 0; t < 320; t++) { s.alpha *= 1 - 0.0228; tick(); }
+    frameView(true);
+    draw(0);
+    showStat();
+    finish();
+  }
+
+  function start() {
+    if (s.raf) { cancelAnimationFrame(s.raf); s.raf = 0; }
+    measure();
+    s.nodes = []; s.edges = []; s.alpha = 1; s.nextAt = 0; s.done = false; view.ready = false;
+    s.target = W < 420 ? 64 : 96;
+    for (var i = 0; i < modeButtons.length; i++) {
+      modeButtons[i].setAttribute("aria-pressed", String(modeButtons[i].getAttribute("data-mode") === s.mode));
+    }
+    if (reduceMQ.matches) { instant(); return; }
+    draw(0);
+    showStat();
+    schedule();
+  }
+
+  for (var b = 0; b < modeButtons.length; b++) {
+    modeButtons[b].addEventListener("click", function () {
+      s.mode = this.getAttribute("data-mode");
+      start();
+    });
+  }
+  replayBtn.addEventListener("click", start);
+
+  function onScheme() { if (s.done || reduceMQ.matches) draw(Infinity); }
+  if (darkMQ.addEventListener) darkMQ.addEventListener("change", onScheme);
+  else if (darkMQ.addListener) darkMQ.addListener(onScheme);
+
+  if ("ResizeObserver" in window) {
+    new ResizeObserver(function () {
+      if (measure()) { frameView(true); draw(Infinity); }
+    }).observe(plate);
+  }
+
+  if ("IntersectionObserver" in window) {
+    new IntersectionObserver(function (entries) {
+      s.onscreen = entries[0].isIntersecting;
+      schedule();
+    }, { threshold: 0.15 }).observe(plate);
+  } else {
+    s.onscreen = true;
+  }
+  document.addEventListener("visibilitychange", schedule);
+
+  start();
+})();
+</script>
+</body>
+</html>

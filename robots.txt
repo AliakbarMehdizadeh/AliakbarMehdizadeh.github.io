@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://aliakbarmehdizadeh.github.io/sitemap.xml
