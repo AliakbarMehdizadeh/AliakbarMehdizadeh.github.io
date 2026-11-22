@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aliakbar (Ali) Mehdizadeh | Computational Social Scientist</title>
-<meta name="description" content="Aliakbar (Ali) Mehdizadeh is a computational social scientist (Ph.D., UC Davis) studying how LLM agents form networks, change opinions, and agree on conventions.">
+<title>Aliakbar (Ali) Mehdizadeh | Complex Systems Researcher</title>
+<meta name="description" content="Aliakbar (Ali) Mehdizadeh is a complex systems researcher (Ph.D., UC Davis) who joins physics, social science, philosophy, and code to study human-AI societies.">
 <meta name="author" content="Aliakbar Mehdizadeh">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <link rel="canonical" href="https://aliakbarmehdizadeh.github.io/">
@@ -14,19 +14,19 @@
 
 <meta property="og:type" content="profile">
 <meta property="og:site_name" content="Aliakbar Mehdizadeh">
-<meta property="og:title" content="Aliakbar (Ali) Mehdizadeh, computational social scientist">
-<meta property="og:description" content="Research on how AI agents form networks, give in to peer pressure, settle on conventions, and reshape the knowledge people rely on.">
+<meta property="og:title" content="Aliakbar (Ali) Mehdizadeh, complex systems researcher">
+<meta property="og:description" content="Statistical physics, social science, philosophy, and large-scale computation applied to how people and AI agents form networks, influence each other, and build shared knowledge.">
 <meta property="og:url" content="https://aliakbarmehdizadeh.github.io/">
 <meta property="og:image" content="https://aliakbarmehdizadeh.github.io/assets/og-image.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Aliakbar Mehdizadeh, computational social scientist, beside a network of AI agents colored by group">
+<meta property="og:image:alt" content="Aliakbar Mehdizadeh, complex systems researcher, beside a network of AI agents colored by group">
 <meta property="og:locale" content="en_US">
 <meta property="profile:first_name" content="Aliakbar">
 <meta property="profile:last_name" content="Mehdizadeh">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Aliakbar (Ali) Mehdizadeh, computational social scientist">
-<meta name="twitter:description" content="Research on how AI agents form networks, give in to peer pressure, settle on conventions, and reshape the knowledge people rely on.">
+<meta name="twitter:title" content="Aliakbar (Ali) Mehdizadeh, complex systems researcher">
+<meta name="twitter:description" content="Statistical physics, social science, philosophy, and large-scale computation applied to how people and AI agents form networks, influence each other, and build shared knowledge.">
 <meta name="twitter:image" content="https://aliakbarmehdizadeh.github.io/assets/og-image.png">
 
 <link rel="icon" href="/favicon.ico" sizes="48x48">
@@ -280,8 +280,10 @@ cite { font-style: italic; }
 .entries .links { font-size: 0.9375rem; }
 .entries .links a { margin-right: 1rem; }
 .me { color: var(--ink); font-weight: 500; }
+.entries.skills > li { grid-template-columns: 7.5rem minmax(0, 1fr); }
+.entries.skills .when { color: var(--ink); font-weight: 560; }
 @media (max-width: 30rem) {
-  .entries > li { grid-template-columns: minmax(0, 1fr); }
+  .entries > li, .entries.skills > li { grid-template-columns: minmax(0, 1fr); }
   .entries .when { padding-top: 0; }
 }
 
@@ -317,7 +319,7 @@ cite { font-style: italic; }
       "@type": "ProfilePage",
       "@id": "https://aliakbarmehdizadeh.github.io/#profilepage",
       "url": "https://aliakbarmehdizadeh.github.io/",
-      "name": "Aliakbar (Ali) Mehdizadeh | Computational Social Scientist",
+      "name": "Aliakbar (Ali) Mehdizadeh | Complex Systems Researcher",
       "isPartOf": { "@id": "https://aliakbarmehdizadeh.github.io/#website" },
       "mainEntity": { "@id": "https://aliakbarmehdizadeh.github.io/#person" },
       "dateModified": "2026-11-22",
@@ -332,23 +334,26 @@ cite { font-style: italic; }
       "familyName": "Mehdizadeh",
       "url": "https://aliakbarmehdizadeh.github.io/",
       "email": "mailto:amehdizadeh@ucdavis.edu",
-      "jobTitle": "Computational Social Scientist",
-      "description": "Computational social scientist (Ph.D., University of California, Davis) who studies multi-agent AI systems, network science, and human-AI coupling.",
+      "jobTitle": "Complex Systems Researcher",
+      "description": "Complex systems researcher (Ph.D., University of California, Davis) who combines statistical physics, social science, philosophy of science, and large-scale computation to study human-AI societies.",
       "alumniOf": [
         { "@type": "CollegeOrUniversity", "name": "University of California, Davis", "sameAs": "https://en.wikipedia.org/wiki/University_of_California,_Davis" },
         { "@type": "CollegeOrUniversity", "name": "Simon Fraser University", "sameAs": "https://en.wikipedia.org/wiki/Simon_Fraser_University" },
         { "@type": "CollegeOrUniversity", "name": "Sharif University of Technology", "sameAs": "https://en.wikipedia.org/wiki/Sharif_University_of_Technology" }
       ],
       "knowsAbout": [
+        "Complex systems",
+        "Statistical physics",
+        "Dynamical systems",
+        "Network science",
+        "Collective behavior",
         "Computational social science",
         "Multi-agent systems",
         "Large language models",
-        "Network science",
-        "Complex systems",
-        "Opinion dynamics",
-        "Convention formation",
         "Human-AI interaction",
-        "Statistical physics"
+        "Philosophy of science",
+        "Agent-based modeling",
+        "Scientific computing"
       ],
       "sameAs": [
         "https://scholar.google.com/citations?user=Cer-MZUAAAAJ",
@@ -414,6 +419,7 @@ cite { font-style: italic; }
   <nav aria-label="Sections">
     <ul>
       <li><a href="#research">Research</a></li>
+      <li><a href="#methods">Methods</a></li>
       <li><a href="#publications">Publications</a></li>
       <li><a href="#talks">Talks</a></li>
       <li><a href="#teaching">Teaching</a></li>
@@ -428,8 +434,8 @@ cite { font-style: italic; }
   <section class="hero" aria-labelledby="name">
     <div>
       <h1 id="name"><span>Aliakbar</span> <span>Mehdizadeh</span></h1>
-      <p class="role">Computational social scientist with a Ph.D. from UC Davis.</p>
-      <p class="lede">I study AI agents as social actors: who they connect with, when they give in to peer pressure, how they settle on shared conventions, and how they reshape the knowledge people rely on.</p>
+      <p class="role">Complex systems researcher with a Ph.D. from UC Davis.</p>
+      <p class="lede">I study human-AI societies as complex systems, joining statistical physics, social science, and philosophy with code: large-scale simulations and data pipelines that test how agents form ties, change their minds, and settle on shared conventions.</p>
       <ul class="profiles">
         <li><a href="/Mehdizadeh_CV.pdf">CV</a></li>
         <li><a href="mailto:amehdizadeh@ucdavis.edu">Email</a></li>
@@ -458,14 +464,17 @@ cite { font-style: italic; }
   <section class="block" id="about" aria-labelledby="about-h">
     <h2 id="about-h">About</h2>
     <div class="text">
-      <p>Aliakbar (Ali) Mehdizadeh is a computational social scientist who studies multi-agent AI systems as social systems. He completed his Ph.D. in Communication (Computational Social Science) at the University of California, Davis, in 2026, advised by Martin Hilbert. His dissertation develops the framework of <a href="https://doi.org/10.1007/978-1-4614-7163-9_110282-1">multi-agent generative networks</a>, in which large language model agents form ties, influence one another, and curate knowledge. His methods combine LLM-agent experiments, network science, and dynamical systems.</p>
-      <p>He trained first in physics, at Sharif University of Technology and at Simon Fraser University, where he worked on the optimal control of molecular motors, and then in philosophy of science at Sharif. He also spent several years in Tehran’s technology sector, where he led people analytics at Cafe Bazaar and Hezardastan Group as the organization grew from about 100 to 1,000 employees, and worked as a product owner and data scientist.</p>
+      <p>Aliakbar (Ali) Mehdizadeh is a complex systems researcher. His work joins three traditions: statistical physics and dynamical systems for formal models; social science for questions about networks, influence, and collective behavior; and philosophy of science for questions of knowledge, evidence, and ethics. He builds the computation that connects them, from large-scale LLM-agent simulations on high-performance computing clusters to open-source data pipelines.</p>
+      <p>He completed his Ph.D. in Communication (Computational Social Science) at the University of California, Davis, in 2026, advised by Martin Hilbert. His dissertation develops the framework of <a href="https://doi.org/10.1007/978-1-4614-7163-9_110282-1">multi-agent generative networks</a>, in which large language model agents form ties, influence one another, and curate knowledge. He trained first in physics, at Sharif University of Technology and at Simon Fraser University, where he worked on the optimal control of molecular motors, and then in philosophy of science at Sharif.</p>
+      <p>He also spent several years in Tehran’s technology sector, where he led people analytics at Cafe Bazaar and Hezardastan Group as the organization grew from about 100 to 1,000 employees, and worked as a product owner and data scientist.</p>
     </div>
   </section>
 
   <section class="block" id="research" aria-labelledby="research-h">
     <h2 id="research-h">Research</h2>
     <div class="text">
+      <p>My projects share questions that run through complex systems: how local rules produce global structure, when a system tips from one state to another, and how knowledge and authority are built. Each pairs a formal or computational model with a social question.</p>
+
       <h3>How AI agents build networks</h3>
       <p>Asked to grow a network one link at a time, LLM agents reproduce preferential attachment: they link to agents that already have many connections. Give them social attributes such as age, gender, religion, or political orientation, and they also link to agents like themselves. The networks that result sort into homophilic communities, with uneven ties between groups that mirror familiar social hierarchies.</p>
       <p class="ref">With Martin Hilbert, <a href="https://doi.org/10.1007/s13278-025-01535-7"><cite>Social Network Analysis and Mining</cite>, 2025</a></p>
@@ -485,6 +494,38 @@ cite { font-style: italic; }
       <h3>Human-AI coupling across timescales</h3>
       <p>AI systems act in seconds, while the people and institutions that check and repair them work over hours to years. We model coupled human-AI systems as slow-fast interdependent networks to ask when that gap in timescales makes the whole system fragile, producing tipping points, hysteresis, and the risk of collapse.</p>
       <p class="ref">Working paper with Martin Hilbert, Raissa D’Souza, and James Crutchfield</p>
+    </div>
+  </section>
+
+  <section class="block" id="methods" aria-labelledby="methods-h">
+    <h2 id="methods-h">Methods</h2>
+    <div class="text">
+      <ul class="entries skills">
+        <li>
+          <span class="when">Physics</span>
+          <div class="what"><p>Statistical physics; nonlinear and slow-fast dynamical systems; tipping points, bifurcation, and basin analysis; stochastic thermodynamics and optimal control; Monte Carlo methods</p></div>
+        </li>
+        <li>
+          <span class="when">Social science</span>
+          <div class="what"><p>Network analysis, including temporal and multilayer networks; social influence, opinion dynamics, and cascade models; agent-based and LLM-agent simulation; experimental and survey design; digital-trace data</p></div>
+        </li>
+        <li>
+          <span class="when">Philosophy</span>
+          <div class="what"><p>Philosophy of science; epistemic authority and AI-generated knowledge; ethics and institutional decision-making</p></div>
+        </li>
+        <li>
+          <span class="when">Programming</span>
+          <div class="what"><p>Python (NumPy, SciPy, pandas, NetworkX), R, SQL, Bash, Git</p></div>
+        </li>
+        <li>
+          <span class="when">ML and NLP</span>
+          <div class="what"><p>PyTorch, Hugging Face Transformers, scikit-learn; prompting, fine-tuning, and large-scale text annotation with LLMs</p></div>
+        </li>
+        <li>
+          <span class="when">Computing</span>
+          <div class="what"><p>High-performance computing clusters, Docker, PostgreSQL, Airflow; reproducible, open-source pipelines</p></div>
+        </li>
+      </ul>
     </div>
   </section>
 

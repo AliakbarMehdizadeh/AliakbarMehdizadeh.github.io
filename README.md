@@ -1,6 +1,6 @@
 # aliakbarmehdizadeh.github.io
 
-Personal academic website of Aliakbar (Ali) Mehdizadeh, computational social scientist.
+Personal academic website of Aliakbar (Ali) Mehdizadeh, complex systems researcher.
 
 Live at https://aliakbarmehdizadeh.github.io/
 
