@@ -240,13 +240,27 @@ cite { font-style: italic; }
     column-gap: var(--gap);
   }
 }
-.block > h2 {
+.block > h2,
+.block > .side > h2 {
   font-size: 1.125rem;
   font-weight: 600;
   line-height: 1.62;
   margin: 0 0 1rem;
 }
-@media (min-width: 52rem) { .block > h2 { margin: 0; } }
+@media (min-width: 52rem) { .block > h2, .block > .side > h2 { margin: 0; } }
+
+/* Portrait in the label column of About */
+.portrait {
+  display: block;
+  width: 8rem;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 6px;
+  margin: 0 0 1.25rem;
+  background: var(--plate);
+}
+@media (min-width: 52rem) { .portrait { width: 100%; max-width: var(--label); margin: 1rem 0 0; } }
 
 .text p { margin: 0 0 1em; }
 .text > :last-child { margin-bottom: 0; }
@@ -334,6 +348,7 @@ cite { font-style: italic; }
       "familyName": "Mehdizadeh",
       "url": "https://aliakbarmehdizadeh.github.io/",
       "email": "mailto:amehdizadeh@ucdavis.edu",
+      "image": "https://aliakbarmehdizadeh.github.io/assets/photo.jpg",
       "jobTitle": "Complex Systems Researcher",
       "description": "Complex systems researcher (Ph.D., University of California, Davis) who combines statistical physics, social science, philosophy of science, and large-scale computation to study human-AI societies.",
       "alumniOf": [
@@ -462,7 +477,10 @@ cite { font-style: italic; }
   </section>
 
   <section class="block" id="about" aria-labelledby="about-h">
-    <h2 id="about-h">About</h2>
+    <div class="side">
+      <h2 id="about-h">About</h2>
+      <img class="portrait" src="/assets/photo.jpg" width="440" height="440" alt="Portrait of Aliakbar Mehdizadeh" decoding="async">
+    </div>
     <div class="text">
       <p>Aliakbar (Ali) Mehdizadeh is a complex systems researcher. His work joins three traditions: statistical physics and dynamical systems for formal models; social science for questions about networks, influence, and collective behavior; and philosophy of science for questions of knowledge, evidence, and ethics. He builds the computation that connects them, from large-scale LLM-agent simulations on high-performance computing clusters to open-source data pipelines.</p>
       <p>He completed his Ph.D. in Communication (Computational Social Science) at the University of California, Davis, in 2026, advised by Martin Hilbert. His dissertation develops the framework of <a href="https://doi.org/10.1007/978-1-4614-7163-9_110282-1">multi-agent generative networks</a>, in which large language model agents form ties, influence one another, and curate knowledge. He trained first in physics, at Sharif University of Technology and at Simon Fraser University, where he worked on the optimal control of molecular motors, and then in philosophy of science at Sharif.</p>
