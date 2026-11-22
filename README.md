@@ -23,5 +23,5 @@ A single static page with no build step, served by GitHub Pages from the root of
 
 - **New paper or talk:** copy an existing `<li>` in the Publications or Talks section of `index.html` and edit it. If it is a paper, also add a `ScholarlyArticle` entry to the JSON-LD block in the `<head>`.
 - **Update the CV:** replace `Mehdizadeh_CV.pdf` with a new PDF of the same name. Its LaTeX source is `CV_Mehdizadeh_Website.tex` in the CV_Letter folder; this public copy leaves out the phone number.
-- **Change the photo:** replace `assets/photo.jpg` with another square image (at least 440 pixels, metadata removed). The page and the JSON-LD `Person` entry both point to it.
+- **Change the photo:** replace `assets/photo.jpg` with another square image (at least 600 pixels, metadata removed). The page and the JSON-LD `Person` entry both point to it.
 - **After any edit:** update the date in `sitemap.xml` (`<lastmod>`), in the JSON-LD (`dateModified`), and in the footer.
